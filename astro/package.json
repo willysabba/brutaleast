@@ -6,6 +6,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "deploy": "gh-pages -d dist",
+    "deploy:github": "env-cmd -f .env.github astro build && gh-pages -d dist",
+    "deploy:domain": "env-cmd -f .env.domain astro build && gh-pages -d dist",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -14,9 +16,11 @@
     "@astrojs/rss": "^4.0.14",
     "@astrojs/sitemap": "^3.6.0",
     "astro": "^5.16.4",
+    "dotenv": "^17.2.3",
     "sharp": "^0.34.3"
   },
   "devDependencies": {
+    "env-cmd": "^11.0.0",
     "gh-pages": "^6.3.0"
   }
 }
